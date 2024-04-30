@@ -1,0 +1,15 @@
+@import "../../styles/mixin.scss";
+
+.countryNameText {
+  cursor: pointer;
+  background-color: burlywood;
+  border: none;
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: start;
+
+  @include media-sm {
+    font-size: 16px;
+  }
+}

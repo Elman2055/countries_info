@@ -1,0 +1,79 @@
+@import "../../styles/mixin.scss";
+
+.countryInfo {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include media-l {
+    height: 57vh;
+  }
+
+  @include media-md {
+    height: 65vh;
+  }
+
+  @include media-sm {
+    height: 61vh;
+    width: 39vw;
+    font-size: 15px;
+  }
+
+  & .infoFlex {
+    width: 44vw;
+    display: flex;
+    justify-content: space-between;
+
+    @include media-l {
+      width: 52vw;
+    }
+
+    @include media-md {
+      height: 48vh;
+      flex-direction: column;
+    }
+
+    @include media-sm {
+      height: 48vh;
+      width: 42vw;
+      flex-direction: column;
+    }
+
+    & h3 {
+      margin-top: 10px;
+    }
+
+    & .country {
+      margin-bottom: 30px;
+    }
+
+    & img {
+      height: 23vh;
+      width: 21vw;
+
+      @include media-l {
+        width: 29vw;
+      }
+
+      @include media-md {
+        width: 40vw;
+        margin-top: 10px;
+      }
+
+      @include media-sm {
+        height: 18vh;
+        width: 36vw;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  & .borderMargin {
+    margin-top: 40px;
+  }
+
+  & li {
+    margin-top: 10px;
+  }
+}

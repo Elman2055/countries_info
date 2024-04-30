@@ -1,0 +1,156 @@
+@import "../styles/mixin.scss";
+
+.countryInfoContainer {
+  width: 72vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  @include media-l {
+    width: 90vw;
+  }
+
+  @include media-md {
+    width: 90vw;
+  }
+
+  @include media-sm {
+    width: 90vw;
+  }
+
+  & .loader {
+    width: 80px;
+    height: 80px;
+    border: 5px solid;
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    border-color: #ff3d00 transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  & .backdrop {
+    position: absolute;
+    inset: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  & .sameInfoName {
+    height: 90vh;
+    border: 2px solid brown;
+    overflow-x: hidden;
+    border-radius: 15px;
+
+    @include media-sm {
+      height: 73vh;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: brown;
+      border-radius: 115px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(252, 148, 13);
+      border-radius: 15px;
+    }
+  }
+
+  & .name {
+    width: 20vw;
+    padding: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    @include media-l {
+      width: 27vw;
+    }
+
+    @include media-md {
+      width: 36vw;
+    }
+
+    @include media-sm {
+      width: 34vw;
+    }
+
+    & .search {
+      margin-bottom: 50px;
+
+      & .countrySearchInput {
+        width: 18vw;
+        position: fixed;
+        padding: 10px;
+        border: 2px solid brown;
+        border-radius: 15px;
+        outline: none;
+        font-size: 16px;
+        color: black;
+        background-color: white;
+        transition: all 0.3s ease;
+
+        &:focus {
+          border-color: orange;
+          box-shadow: 0 0 10px rgba(252, 148, 13, 0.5);
+        }
+
+        &:hover {
+          border-color: orange;
+        }
+
+        &::placeholder {
+          color: grey;
+          opacity: 0.7;
+        }
+
+        @include media-l {
+          width: 24vw;
+        }
+
+        @include media-md {
+          width: 30vw;
+        }
+
+        @include media-sm {
+          width: 27vw;
+          padding: 8px;
+        }
+      }
+    }
+  }
+
+  & .info {
+    width: 50vw;
+    padding: 30px;
+
+    @include media-l {
+      width: 60vw;
+    }
+
+    @include media-md {
+      width: 51vw;
+    }
+
+    @include media-sm {
+      width: 52vw;
+    }
+  }
+}
