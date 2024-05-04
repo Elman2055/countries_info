@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
+import InputName from "../components/UI/input/InputName";
 import CountryName from "../components/countryName/CountryName";
 import CountryInfo from "../components/countryInfo/CountryInfo";
 import { TNameCountry, TInfoCountry } from "./ContainerData";
@@ -13,6 +14,10 @@ const CountryInfoContainer = () => {
   const [filteredCountries, setFilteredCountries] = useState<TNameCountry[]>(
     []
   );
+
+  const HandleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(e.target.value.toLowerCase());
+  };
 
   const GetCountryName = useCallback(async () => {
     setFlag(true);
@@ -78,29 +83,20 @@ const CountryInfoContainer = () => {
     setFilteredCountries(newFilteredCountries);
   }, [searchText, countryName]);
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchText(e.target.value.toLowerCase());
-  };
-
   return (
     <>
       <div className="countryInfoContainer">
-        <div className="name sameInfoName">
-          <div className="search">
-            <input
-              type="text"
-              className="countrySearchInput "
-              placeholder="Search"
-              onChange={handleSearchChange}
-            />
+        <div className="titleInpContainer">
+            <InputName onChange={HandleSearchChange} />
+          <div className="name sameInfoName">
+            {filteredCountries.map((elem) => (
+              <CountryName
+                key={elem.name.common}
+                name={elem.name.common}
+                onClick={() => GetcountryInfo(elem.name.common, elem.borders)}
+              />
+            ))}
           </div>
-          {filteredCountries.map((elem) => (
-            <CountryName
-              key={elem.name.common}
-              name={elem.name.common}
-              onClick={() => GetcountryInfo(elem.name.common, elem.borders)}
-            />
-          ))}
         </div>
         {flag && (
           <div className="backdrop">

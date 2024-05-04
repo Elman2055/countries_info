@@ -11,7 +11,7 @@
 }
 
 @mixin media-sm {
-  @media (max-width: 550px) and (min-width: 340px) {
+  @media (max-width: 551px) and (min-width: 320px) {
     @content;
   }
 }

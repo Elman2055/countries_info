@@ -1,0 +1,42 @@
+@import "../../../styles/mixin.scss";
+
+.countrySearchInput {
+  width: 20vw;
+  padding: 10px;
+  border: 2px solid brown;
+  border-radius: 15px;
+  outline: none;
+  font-size: 16px;
+  color: black;
+  background-color: white;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+
+  &:focus {
+    border-color: orange;
+    box-shadow: 0 0 10px rgba(252, 148, 13, 0.5);
+  }
+
+  &:hover {
+    border-color: orange;
+  }
+
+  &::placeholder {
+    color: grey;
+    opacity: 0.7;
+  }
+
+  @include media-l {
+    width: 27vw;
+  }
+
+  @include media-md {
+    width: 36vw;
+    padding: 5px;
+  }
+
+  @include media-sm {
+    width: 34vw;
+    padding: 5px;
+  }
+}
